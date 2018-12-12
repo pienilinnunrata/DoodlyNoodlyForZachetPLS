@@ -4,7 +4,7 @@ Doodle with your friend or enemy
 
 About:
 * multiplayer draw-and-guess game (local)
-* 2 services: server (business logic) + word generator
+* 2 services: business logic + word generator
 * simple minimalistic intuitive design
 
 ![](presentation.gif)
