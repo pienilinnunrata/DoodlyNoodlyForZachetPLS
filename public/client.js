@@ -11,8 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   var canvas = document.getElementById("drawing");
+  var currentImage = document.getElementById("currentImage");
+  var generateButton = document.getElementById("generate");
+  var preWord = document.getElementById("preWord");
+  var currentWord = document.getElementById("currentWord");
+  var hintButton = document.getElementById("hint");
 
-  document.getElementById("hint").disabled = true;
+  hintButton.disabled = true;
 
   // create a 2D drawing context to draw
   var context = canvas.getContext("2d");
@@ -102,15 +107,16 @@ document.addEventListener("DOMContentLoaded", () => {
     socket.emit("clear");
     //document.getElementById("preWord").innerHTML = "Success! Waiting for someone to generate a word";
   })
+
   socket.on("clearRect", () => {
     context.clearRect(0, 0, width, height);
-    document.getElementById("currentImage").src = "https://image.flaticon.com/icons/png/128/39/39293.png";
-    document.getElementById("generate").disabled = false;
-    document.getElementById("generate").style.opacity = "1";
-    document.getElementById("preWord").innerHTML = "The game has ended! Waiting for someone to generate a word";
-    document.getElementById("currentWord").innerHTML = "";
-    document.getElementById("hint").disabled = true;
-    document.getElementById("ok").style.opacity = "0";
+    currentImage.src = "https://image.flaticon.com/icons/png/128/39/39293.png";
+    generateButton.disabled = false;
+    generateButton.style.opacity = "1";
+    preWord.innerHTML = "The game has ended! Waiting for someone to generate a word";
+    currentWord.innerHTML = "";
+    hintButton.disabled = true;
+    okButton.style.opacity = "0";
   });
 
 });
