@@ -21,3 +21,4 @@ npm start
 
 * enable clearing the area
 * adequate success/fail messages
+* add timer
