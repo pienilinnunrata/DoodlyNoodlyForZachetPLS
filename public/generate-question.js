@@ -7,6 +7,8 @@ var okButton = document.getElementById("ok");
 var generateButton = document.getElementById("generate");
 var hintButton = document.getElementById("hint");
 var currentImage = document.getElementById("currentImage");
+var currentEvent = document.getElementById("currentEvent");
+var clearButton = document.getElementById("clear");
 
 var questionMark = "https://image.flaticon.com/icons/png/128/39/39293.png";
 
@@ -18,15 +20,19 @@ socket.on("getRand", rng => {
   generateButton.style.opacity = "0.5";
   document.getElementById("hint").disabled = false;
   preWord.innerHTML = "";
-  //currentWord.innerHTML = "Your opponent has generated a word";
+  //currentWord.innerHTML = randomWord;
   console.log(randomWord);
   currentImage.src = questionMark;
+  currentEvent.innerHTML = "";
 });
 
 generateButton.addEventListener("click", () => {
   socket.emit("getRand");
-  preWord.innerHTML = "";
-  currentWord.innerHTML = randomWord;
+  clearButton.disabled = false;
+  clearButton.style.opacity = "1";
+  setTimeout(function() {
+    currentWord.innerHTML = randomWord;
+  }, 500);
   okButton.style.opacity = "1";
 });
 

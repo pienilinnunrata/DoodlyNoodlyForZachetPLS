@@ -37,9 +37,9 @@ io.on("connection", socket => {
     uploadImage(randomWord);
   });
 
-  socket.on("clear", () => {
+  socket.on("clear", success => {
     line_history = [];
-    io.emit("clearRect");
+    io.emit("clearRect", success);
   });
 
   if (currentRandomWord != "") {

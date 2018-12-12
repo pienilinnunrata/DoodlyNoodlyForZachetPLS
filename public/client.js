@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var preWord = document.getElementById("preWord");
   var currentWord = document.getElementById("currentWord");
   var hintButton = document.getElementById("hint");
+  var currentEvent = document.getElementById("currentEvent");
 
   hintButton.disabled = true;
 
@@ -98,25 +99,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // clear function
   var clearButton = document.getElementById("clear");
+  //clearButton.disabled = true;
+  clearButton.style.opacity = "0.5";
+
   clearButton.addEventListener("click", e => {
-    socket.emit("clear");
+    socket.emit("clear", false);
     //document.getElementById("preWord").innerHTML = "Fail! Waiting for someone to generate a word";
   });
+
   var okButton = document.getElementById("ok");
   okButton.addEventListener("click", e => {
-    socket.emit("clear");
-    //document.getElementById("preWord").innerHTML = "Success! Waiting for someone to generate a word";
+    socket.emit("clear", true);
   })
 
-  socket.on("clearRect", () => {
+  socket.on("clearRect", success => {
     context.clearRect(0, 0, width, height);
     currentImage.src = "https://image.flaticon.com/icons/png/128/39/39293.png";
     generateButton.disabled = false;
     generateButton.style.opacity = "1";
-    preWord.innerHTML = "The game has ended! Waiting for someone to generate a word";
+    preWord.innerHTML = "The game has ended!\nTo become the host tap the Generate button.";
     currentWord.innerHTML = "";
     hintButton.disabled = true;
     okButton.style.opacity = "0";
+    if (success) {
+      currentEvent.innerHTML = "Success!";
+    } else {
+      currentEvent.innerHTML = "Fail!";
+    }
   });
 
 });
