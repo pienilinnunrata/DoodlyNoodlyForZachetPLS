@@ -128,4 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  window.onbeforeunload = function () {
+    socket.emit("clearWord");
+  };
+
 });

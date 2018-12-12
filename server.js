@@ -15,6 +15,7 @@ var line_history = [];
 var wordList = [];
 var currentRandomWord = "";
 
+
 io.on("connection", socket => {
   console.log(currentRandomWord);
   function uploadImage(randomWord) {
@@ -32,6 +33,11 @@ io.on("connection", socket => {
         return new Error(err);
       });
   }
+
+  // needed for rerun
+  /*socket.on("clearWord", ()=> {
+    currentRandomWord = "";
+  });*/
 
   socket.on("displayImage", randomWord => {
     uploadImage(randomWord);
