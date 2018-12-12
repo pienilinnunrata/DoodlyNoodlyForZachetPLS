@@ -24,4 +24,5 @@ go to localhost:9999
 ## TODO
 
 * enable clearing the area
+* better design
 * add timer
