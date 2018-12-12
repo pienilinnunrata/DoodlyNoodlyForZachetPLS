@@ -31,3 +31,4 @@ go to localhost:9999
 * enable clearing the area
 * better design
 * add timer
+* add score
