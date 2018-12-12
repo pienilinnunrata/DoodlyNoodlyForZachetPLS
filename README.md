@@ -13,6 +13,8 @@ npm install
 npm start
 ```
 
+go to localhost:9999
+
 ## Built With
 
 * [Node.js](https://nodejs.org) - Server-side JavaScript runtime
