@@ -2,6 +2,8 @@
 
 Doodle with your friend or enemy
 
+![](presentation.gif)
+
 by Julia Barsukova and Anna Romanova (431 group)
 
 ## How to Install
