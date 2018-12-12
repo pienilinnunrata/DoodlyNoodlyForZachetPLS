@@ -21,6 +21,10 @@
   margin-left: 1%;
 }
 
+#drawing {
+  flex: 49%;
+}
+
 #clear {
   grid-row-gap: 1vw;
   grid-row: 2 / 3;

@@ -2,6 +2,8 @@
 
 Doodle with your friend or enemy
 
+by Julia Barsukova and Anna Romanova (431 group)
+
 ## How to Install
 
 ```

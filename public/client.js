@@ -1,5 +1,3 @@
-// Wait for HTML page to load and ask the browser to tell when it's ready
-
 document.addEventListener("DOMContentLoaded", () => {
   var mouse = {
     click: false,
@@ -11,16 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     pos_prev: false
   };
   
-  // get canvas element
+
   var canvas = document.getElementById("drawing");
 
   // create a 2D drawing context to draw
   var context = canvas.getContext("2d");
 
-  // tell socket to connect to server
+
   var socket = io.connect();
 
-  // window dimensions
   var width = window.innerWidth;
   var height = window.innerHeight;
 
@@ -28,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.width = document.getElementById("container-canvas").offsetWidth;
   canvas.height = document.getElementById("container-canvas").offsetHeight;
 
-  // mouse.click is true whenever we keep mouse button clicked
   canvas.onmousedown = e => {
     mouse.click = true;
   };
@@ -59,27 +55,22 @@ document.addEventListener("DOMContentLoaded", () => {
     var line = data.newLine;
     context.strokeStyle = line[2];
 
-    // start a new path
     context.beginPath();
     context.lineWidth = 2;
 
-    // move to the first point
     context.moveTo(
       line[0].x * width - offset.left,
       line[0].y * height - offset.top
     );
 
-    // draw the line to the second received point
     context.lineTo(
       line[1].x * width - offset.left,
       line[1].y * height - offset.top
     );
 
-    // actually draw the line
     context.stroke();
   });
 
-  // Runs every 25/1000th of a second
   // checks if player is drawing, if so, then draw the line
   function mainLoop() {
     if (mouse.click && mouse.move && mouse.pos_prev) {

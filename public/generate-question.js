@@ -1,6 +1,5 @@
 var socket = io.connect();
 
-// array of words
 var randomWord = "";
 var currentWord = document.getElementById("currentWord");
 var preWord = document.getElementById("preWord");
