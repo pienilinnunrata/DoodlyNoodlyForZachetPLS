@@ -1,0 +1,67 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border: 2px solid coral;
+}
+
+/* Buttons */
+button {
+  border-radius: 15px;
+  padding: 8px 10px;
+  color: #ffffff;
+  display: inline-block;
+  font: "Cambria", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  border-style: solid;
+}
+
+#clear {
+  background: #ff0000;
+}
+
+#hint {
+  background: rgb(238, 238, 47);
+  margin-top: 10px;
+}
+
+#generate {
+  background: rgb(90, 237, 222);
+}
+
+#ok {
+  background: rgb(200,200,200);
+  opacity: 0;
+}
+
+/* #currentImage {
+  margin: 0;
+} */
+
+#currentImage {
+  max-width: 20vw;
+  max-height: 20vh;
+  margin: auto;
+  display: block;
+}
+
+#currentWord, #preWord {
+  text-align: center;
+  font-size: 3rem;
+  font-family: sans-serif;
+}

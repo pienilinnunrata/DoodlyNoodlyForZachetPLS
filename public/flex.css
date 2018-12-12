@@ -1,0 +1,77 @@
+/* Containers */
+#container {
+  height: 80%;
+  width: 80%;
+  align-self: center;
+
+  display: flex;
+}
+
+#container-indicators {
+  flex: 49%;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+  grid-template-rows: 0.2fr 1fr 0.2fr 0.3fr 0.3fr 0.2fr 2fr 1fr;
+  grid-column-gap: 1vw;
+  background-color: lightpink;
+}
+
+#container-canvas {
+  flex: 49%;
+  margin-left: 1%;
+}
+
+#clear {
+  grid-row-gap: 1vw;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+#hint {
+  grid-row-gap: 1vw;
+  grid-row: 3 / 4;
+  grid-column: 2 / 4;
+}
+
+#generate {
+  grid-row-gap: 1vw;
+
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+
+#ok {
+  grid-row-gap: 1vw;
+  grid-row: 4 / 4;
+  grid-column: 2 / 4;
+  margin-top: 10px;
+}
+
+#container-indicators p {
+  grid-column: 2 / 4;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+#p-one {
+  grid-row: 4 / 5;
+  background-color: lightgreen;
+  opacity: 0;
+}
+#p-two {
+  grid-row: 5 / 6;
+  background-color: lightskyblue;
+  opacity: 0;
+}
+
+#currentImage {
+  justify-self: center;
+  grid-row: 7 / 8;
+  grid-column: 2 / 4;
+}
+#currentWord, #preWord {
+  /* background-color: blue; */
+  grid-row: 8 / 9;
+  grid-column: 2 / 4;
+}
