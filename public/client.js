@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var canvas = document.getElementById("drawing");
 
+  document.getElementById("hint").disabled = true;
+
   // create a 2D drawing context to draw
   var context = canvas.getContext("2d");
 

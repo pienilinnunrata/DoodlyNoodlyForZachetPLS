@@ -17,3 +17,7 @@ npm start
 * [Express.js](https://expressjs.com/) - Web application framework for Node.js
 * [Socket.io](https://maven.apache.org/) - Real-time Engine
 
+## TODO
+
+* enable clearing the area
+* adequate success/fail messages
