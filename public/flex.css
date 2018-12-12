@@ -18,6 +18,7 @@
 
 #container-canvas {
   flex: 49%;
+  display: inherit;
   margin-left: 1%;
 }
 
