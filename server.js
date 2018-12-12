@@ -15,9 +15,13 @@ var line_history = [];
 var wordList = [];
 var currentRandomWord = "";
 
+var connectCounter = 0;
+var isNotFirstConnect = false;
 
 io.on("connection", socket => {
   console.log(currentRandomWord);
+  connectCounter++;
+  isNotFirstConnect = true;
   function uploadImage(randomWord) {
     axios
       .get(
@@ -78,4 +82,17 @@ io.on("connection", socket => {
     currentRandomWord = wordList[Math.floor(Math.random() * wordList.length)];
     io.emit("getRand", currentRandomWord);
   });
+
+  socket.on('disconnect', function() { 
+    connectCounter--; 
+
+    if (connectCounter==0 && isNotFirstConnect == true) {
+      line_history = [];
+      wordList = [];
+      currentRandomWord = "";
+      connectCounter = 0;
+      isNotFirstConnect = false;
+     }
+  });
+
 });
