@@ -2,6 +2,11 @@
 
 Doodle with your friend or enemy
 
+About:
+* multiplayer draw-and-guess game (local)
+* 2 services: server (business logic) + word generator
+* simple minimalistic intuitive design
+
 ![](presentation.gif)
 
 by Julia Barsukova and Anna Romanova (431 group)
